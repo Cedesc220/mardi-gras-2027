@@ -108,6 +108,9 @@
   .srow .t{font-family:'Fraunces',serif;font-size:1.15rem}
   .srow .w{color:var(--ink-soft)}
   .srow .w b{color:var(--ink)}
+  .srow .w a{color:var(--ink);text-decoration:underline;text-decoration-color:var(--gold);text-decoration-thickness:2px;text-underline-offset:3px}
+  .srow .w a:hover{color:var(--purple)}
+  .sched-note{color:var(--muted);font-style:italic;margin-bottom:1.2rem;font-size:.95rem}
 
   /* ---------- hotel ---------- */
   .hotel{display:grid;gap:2rem;align-items:start}
@@ -137,11 +140,6 @@
   /* ---------- wall ---------- */
   .wall-card{background:var(--card);border:1px solid var(--hairline);border-radius:3px;padding:1.8rem;box-shadow:0 14px 30px -20px rgba(42,33,24,.3)}
   .wall-card .wall-note{font-size:.88rem;font-style:italic;color:var(--muted);margin-bottom:1rem}
-
-  /* ---------- rsvp strip ---------- */
-  .rsvp{border-top:1px solid var(--ink);border-bottom:1px solid var(--ink);text-align:center;padding:2.6rem 1.5rem;margin:3rem 0 0}
-  .rsvp h3{font-family:'Fraunces',serif;font-weight:500;font-size:1.9rem;margin-bottom:.6rem}
-  .rsvp p{color:var(--ink-soft);font-style:italic}
 
   footer{padding:2.5rem 1.5rem 3.5rem;text-align:center;color:var(--muted);font-size:.9rem;font-style:italic}
 
@@ -173,8 +171,8 @@
   <div class="wrap">
     <div class="name">The <em>Krewe</em> · New Orleans</div>
     <nav>
+      <a href="#weekend">Schedule</a>
       <a href="#parties">Parties</a>
-      <a href="#weekend">Weekend</a>
       <a href="#hotel">Hotel</a>
       <a href="#eat">Eat</a>
       <a href="#krewe">Krewe</a>
@@ -195,12 +193,45 @@
 
 <div class="wrap">
 
+  <!-- ============ WEEKEND ============ -->
+  <section id="weekend">
+    <div class="sec-label reveal">The Weekend</div>
+    <h2 class="sec-title reveal">Day by day</h2>
+    <p class="sched-note reveal">Tap a party name to jump to the full details below.</p>
+    <div class="schedule reveal">
+      <div class="srow">
+        <div class="d">Thursday</div><div class="t">Feb 4</div>
+        <div class="w"><b>Arrive &amp; settle in.</b> Check into the Sheraton, find your bearings, ease into the city.</div>
+      </div>
+      <div class="srow">
+        <div class="d">Friday</div><div class="t">Feb 5</div>
+        <div class="w"><b><a href="#event-boil">Shucking Birthday Boil</a>,</b> 5:30–8:30 PM at the Four Seasons.</div>
+      </div>
+      <div class="srow">
+        <div class="d">Saturday</div><div class="t">Feb 6</div>
+        <div class="w"><b><a href="#event-sausage">Sausage Fest</a>,</b> 11:30 AM–1:30 PM at Dat Dog, then the Iris parade.</div>
+      </div>
+      <div class="srow">
+        <div class="d">One night</div><div class="t">TBA</div>
+        <div class="w"><b><a href="#event-dinner">Classy as Shuck</a>.</b> The big dinner at the Four Seasons — date and time still to come.</div>
+      </div>
+      <div class="srow">
+        <div class="d">Sunday</div><div class="t">Feb 7</div>
+        <div class="w"><b>Free day.</b> Parades, brunch, Magazine Street wandering — full plan coming.</div>
+      </div>
+      <div class="srow">
+        <div class="d">Monday</div><div class="t">Feb 8</div>
+        <div class="w"><b>Farewells.</b> Checkout, one last coffee, departures.</div>
+      </div>
+    </div>
+  </section>
+
   <!-- ============ PARTIES ============ -->
   <section id="parties">
     <div class="sec-label reveal">The Parties</div>
     <h2 class="sec-title reveal">Three reasons to pack a bag</h2>
 
-    <article class="feature reveal">
+    <article class="feature reveal" id="event-boil">
       <div class="feature-text">
         <div class="kicker">Friday, February 5 · 5:30 – 8:30 PM</div>
         <h3>It's a Shucking Birthday Boil</h3>
@@ -211,9 +242,6 @@
           <li><b>Where:</b> outdoor space by Chemin à la Mer, Four Seasons, ground floor</li>
           <li><b>Dress:</b> casual — it's a boil</li>
         </ul>
-        <div class="btn-row">
-          <a class="btn outline" href="#rsvp">RSVP</a>
-        </div>
       </div>
       <figure>
         <img src="boil.jpg" alt="Crawfish boil with corn and potatoes" loading="lazy">
@@ -221,7 +249,7 @@
       </figure>
     </article>
 
-    <article class="feature flip reveal">
+    <article class="feature flip reveal" id="event-sausage">
       <div class="feature-text">
         <div class="kicker gold">Saturday, February 6 · 11:30 AM – 1:30 PM</div>
         <h3>Bekah's Second An(nu)al Sausage Fest</h3>
@@ -235,7 +263,6 @@
         </ul>
         <p class="aside">Unattended children will be given margaritas.</p>
         <div class="btn-row">
-          <a class="btn outline" href="#rsvp">RSVP</a>
           <a class="btn outline" href="https://datdog.com" target="_blank" rel="noopener">Dat Dog</a>
         </div>
       </div>
@@ -245,7 +272,7 @@
       </figure>
     </article>
 
-    <article class="feature-solo reveal">
+    <article class="feature-solo reveal" id="event-dinner">
       <div class="kicker green">Date to be announced</div>
       <h3 style="font-family:'Fraunces',serif;font-weight:500;font-size:clamp(1.7rem,3.6vw,2.4rem);line-height:1.15;letter-spacing:-.01em">Classy as Shuck</h3>
       <div class="venue">Four Seasons New Orleans — dinner</div>
@@ -265,38 +292,7 @@
         </div>
       </div>
       <p class="aside">Note: she didn't write cheesy, kitschy, cringy, or costume…</p>
-      <div class="btn-row">
-        <a class="btn outline" href="#rsvp">RSVP</a>
-      </div>
     </article>
-  </section>
-
-  <!-- ============ WEEKEND ============ -->
-  <section id="weekend">
-    <div class="sec-label reveal">The Weekend</div>
-    <h2 class="sec-title reveal">Day by day</h2>
-    <div class="schedule reveal">
-      <div class="srow">
-        <div class="d">Thursday</div><div class="t">Feb 4</div>
-        <div class="w"><b>Arrive &amp; settle in.</b> Check into the Sheraton, find your bearings, ease into the city.</div>
-      </div>
-      <div class="srow">
-        <div class="d">Friday</div><div class="t">Feb 5</div>
-        <div class="w"><b>Shucking Birthday Boil,</b> 5:30–8:30 PM at the Four Seasons.</div>
-      </div>
-      <div class="srow">
-        <div class="d">Saturday</div><div class="t">Feb 6</div>
-        <div class="w"><b>Sausage Fest,</b> 11:30 AM–1:30 PM at Dat Dog, then the Iris parade.</div>
-      </div>
-      <div class="srow">
-        <div class="d">Sunday</div><div class="t">Feb 7</div>
-        <div class="w"><b>Free day.</b> Parades, brunch, Magazine Street wandering — full plan coming.</div>
-      </div>
-      <div class="srow">
-        <div class="d">Monday</div><div class="t">Feb 8</div>
-        <div class="w"><b>Farewells.</b> Checkout, one last coffee, departures.</div>
-      </div>
-    </div>
   </section>
 
   <!-- ============ HOTEL ============ -->
@@ -400,13 +396,6 @@
     </div>
   </section>
 
-</div>
-
-<div class="rsvp" id="rsvp">
-  <div class="wrap">
-    <h3>RSVP</h3>
-    <p>Online RSVPs open soon — for now, reply to Bekah directly.</p>
-  </div>
 </div>
 
 <footer>
