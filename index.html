@@ -145,6 +145,23 @@
 
   footer{padding:2.5rem 1.5rem 3.5rem;text-align:center;color:var(--muted);font-size:.9rem;font-style:italic}
 
+  /* ---------- eat ---------- */
+  .eat-list{border-top:2px solid var(--ink)}
+  .eat-item{display:grid;gap:.5rem;padding:1.5rem 0;border-bottom:1px solid var(--hairline)}
+  @media(min-width:760px){.eat-item{grid-template-columns:1fr auto;gap:2.5rem;align-items:start}}
+  .eat-item h3{font-family:'Fraunces',serif;font-weight:500;font-size:1.45rem;margin-bottom:.15rem}
+  .eat-item h3 a{color:var(--ink);text-decoration:none}
+  .eat-item h3 a:hover{color:var(--purple)}
+  .eat-meta{font-size:.8rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);font-weight:500;margin:.35rem 0 .6rem}
+  .eat-quote{font-style:italic;color:var(--ink-soft);font-size:.98rem}
+  .eat-side{text-align:left;white-space:nowrap}
+  @media(min-width:760px){.eat-side{text-align:right;padding-top:.2rem}}
+  .stars{position:relative;display:inline-block;font-size:.95rem;letter-spacing:.12em}
+  .stars .bg{color:#d9c9a4}
+  .stars .fg{position:absolute;left:0;top:0;color:var(--gold);overflow:hidden;white-space:nowrap}
+  .stars-num{font-weight:600;margin-left:.55rem}
+  .stars-count{display:block;color:var(--muted);font-size:.82rem;font-style:italic;margin-top:.15rem}
+
   .reveal{opacity:0;transform:translateY(14px);transition:opacity .55s ease,transform .55s ease}
   .reveal.in{opacity:1;transform:none}
   @media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none}}
@@ -159,6 +176,7 @@
       <a href="#parties">Parties</a>
       <a href="#weekend">Weekend</a>
       <a href="#hotel">Hotel</a>
+      <a href="#eat">Eat</a>
       <a href="#krewe">Krewe</a>
       <a href="#wall">Wall</a>
     </nav>
@@ -171,7 +189,7 @@
     <h1>Mardi Gras <span class="yr">2027</span></h1>
     <hr class="double-rule">
     <div class="dates">February 4 – 8 · Thursday to Monday</div>
-    <p class="lede">Bekah's throwing the parties — we're throwing ourselves into them. Four days in New Orleans: a <b>birthday crawfish boil</b> on Friday, the <b>second annual sausage fest</b> on Saturday, and a dinner that calls for your most <b>eccentric cocktail attire</b>. Times, places, and dress codes are all below.</p>
+    <p class="lede">Four days in New Orleans with the krewe. A <b>birthday crawfish boil</b> on Friday, the <b>second annual sausage fest</b> on Saturday, and a dinner that calls for your most <b>eccentric cocktail attire</b> — plus plenty of hours in between for whatever the group dreams up. Times, places, and dress codes are all below.</p>
   </div>
 </header>
 
@@ -302,6 +320,59 @@
           <li>On Canal Street, across from the French Quarter</li>
           <li>Rooftop pool, fitness center, Roux Bistro on site</li>
         </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ EAT ============ -->
+  <section id="eat">
+    <div class="sec-label reveal">Fuel</div>
+    <h2 class="sec-title reveal">Where to eat nearby</h2>
+    <p class="measure reveal" style="color:var(--ink-soft);margin-bottom:2rem">Top-rated kitchens within a short walk of the Sheraton — stars included, so you can pick your own adventure.</p>
+    <div class="eat-list reveal">
+      <div class="eat-item">
+        <div>
+          <h3><a href="http://www.muriels.com/" target="_blank" rel="noopener">Muriel's Jackson Square</a></h3>
+          <div class="eat-meta">Contemporary Creole · 801 Chartres St · $$$</div>
+          <p class="eat-quote">"Can't do NOLA without my fav... shrimp and grits. 10/10. Highly recommended."</p>
+        </div>
+        <div class="eat-side">
+          <span class="stars"><span class="bg">★★★★★</span><span class="fg" style="width:92%">★★★★★</span></span><span class="stars-num">4.6</span>
+          <span class="stars-count">4,814 reviews</span>
+        </div>
+      </div>
+      <div class="eat-item">
+        <div>
+          <h3><a href="http://gumboshop.com/" target="_blank" rel="noopener">Gumbo Shop</a></h3>
+          <div class="eat-meta">Cajun &amp; Creole · 630 St Peter St · $$</div>
+          <p class="eat-quote">"The best Creole food in New Orleans! Amazing atmosphere right off the French Quarter."</p>
+        </div>
+        <div class="eat-side">
+          <span class="stars"><span class="bg">★★★★★</span><span class="fg" style="width:90%">★★★★★</span></span><span class="stars-num">4.5</span>
+          <span class="stars-count">2,907 reviews</span>
+        </div>
+      </div>
+      <div class="eat-item">
+        <div>
+          <h3><a href="http://www.antoines.com/" target="_blank" rel="noopener">Antoine's</a></h3>
+          <div class="eat-meta">French-Creole, est. 1840 · 713 St Louis St · $$$</div>
+          <p class="eat-quote">"This is where Oysters Rockefeller were born. The service was incredible."</p>
+        </div>
+        <div class="eat-side">
+          <span class="stars"><span class="bg">★★★★★</span><span class="fg" style="width:90%">★★★★★</span></span><span class="stars-num">4.5</span>
+          <span class="stars-count">2,394 reviews</span>
+        </div>
+      </div>
+      <div class="eat-item">
+        <div>
+          <h3><a href="http://www.tableaufrenchquarter.com/" target="_blank" rel="noopener">Tableau</a></h3>
+          <div class="eat-meta">Creole-French bistro · 616 St Peter St · $$</div>
+          <p class="eat-quote">"Balcony seating overlooking Jackson Square… top-tier Creole cuisine. You HAVE to try the Fried Oyster Pan Roast."</p>
+        </div>
+        <div class="eat-side">
+          <span class="stars"><span class="bg">★★★★★</span><span class="fg" style="width:90%">★★★★★</span></span><span class="stars-num">4.5</span>
+          <span class="stars-count">882 reviews</span>
+        </div>
       </div>
     </div>
   </section>
