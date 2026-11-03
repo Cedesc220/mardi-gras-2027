@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mardi Gras 2027 · New Orleans Krewe Weekend</title>
+<meta name="description" content="The krewe's Mardi Gras weekend in New Orleans — February 4–8, 2027. Itinerary, events, hotel, and all the details.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,400&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#171021;
+    --ink-2:#221829;
+    --ink-3:#2c1f36;
+    --cream:#f5ead6;
+    --cream-dim:#d9c9a8;
+    --gold:#d4a94e;
+    --gold-soft:#e8c87e;
+    --purple:#9a6fd0;
+    --green:#57a773;
+    --muted:#b9a8c6;
+    --card-border:rgba(212,169,78,.22);
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:'Inter',system-ui,sans-serif;
+    background:var(--ink);
+    color:var(--cream);
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  ::selection{background:var(--gold);color:var(--ink)}
+
+  /* ---------- nav ---------- */
+  nav{
+    position:sticky;top:0;z-index:50;
+    background:rgba(23,16,33,.92);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--card-border);
+  }
+  nav .inner{
+    max-width:1080px;margin:0 auto;padding:.7rem 1.25rem;
+    display:flex;align-items:center;justify-content:space-between;gap:1rem;
+  }
+  .brand{font-family:'Fraunces',serif;font-weight:700;font-size:1.05rem;letter-spacing:.02em;color:var(--gold-soft);text-decoration:none}
+  .brand span{color:var(--cream)}
+  .links{display:flex;gap:1.1rem;flex-wrap:wrap}
+  .links a{color:var(--cream-dim);text-decoration:none;font-size:.85rem;font-weight:600;letter-spacing:.04em;text-transform:uppercase}
+  .links a:hover{color:var(--gold-soft)}
+  @media(max-width:640px){.links{gap:.7rem}.links a{font-size:.72rem}}
+
+  /* ---------- hero ---------- */
+  .hero{
+    position:relative;overflow:hidden;
+    background:
+      radial-gradient(1200px 500px at 50% -10%, rgba(154,111,208,.28), transparent 60%),
+      radial-gradient(900px 420px at 85% 110%, rgba(87,167,115,.16), transparent 60%),
+      radial-gradient(700px 380px at 10% 110%, rgba(212,169,78,.14), transparent 60%),
+      var(--ink);
+    text-align:center;
+    padding:5.5rem 1.25rem 4.5rem;
+  }
+  .hero::before{ /* bead dots */
+    content:"";position:absolute;inset:0;pointer-events:none;opacity:.5;
+    background-image:radial-gradient(rgba(212,169,78,.16) 1.5px, transparent 1.6px);
+    background-size:26px 26px;
+    mask-image:radial-gradient(closest-side at 50% 30%, black, transparent);
+    -webkit-mask-image:radial-gradient(closest-side at 50% 30%, black, transparent);
+  }
+  .kicker{
+    display:inline-block;font-size:.78rem;font-weight:700;letter-spacing:.32em;text-transform:uppercase;
+    color:var(--gold);margin-bottom:1.1rem;
+  }
+  .hero h1{
+    font-family:'Fraunces',serif;font-weight:600;
+    font-size:clamp(2.6rem,7.5vw,5rem);line-height:1.04;letter-spacing:-.01em;
+    margin-bottom:.6rem;position:relative;
+  }
+  .hero h1 em{font-style:italic;color:var(--gold-soft)}
+  .hero .place{font-family:'Fraunces',serif;font-style:italic;font-size:clamp(1.1rem,3vw,1.5rem);color:var(--cream-dim);margin-bottom:.4rem}
+  .hero .dates{font-weight:600;letter-spacing:.14em;text-transform:uppercase;font-size:.9rem;color:var(--cream)}
+  .hero .dates .dot{color:var(--gold);margin:0 .5em}
+  .tagline{margin-top:1.4rem;color:var(--muted);font-size:1rem;max-width:34rem;margin-left:auto;margin-right:auto}
+
+  .countdown{display:flex;gap:.7rem;justify-content:center;margin-top:2.2rem;flex-wrap:wrap;position:relative}
+  .cd{background:rgba(255,255,255,.045);border:1px solid var(--card-border);border-radius:14px;min-width:76px;padding:.7rem .4rem}
+  .cd b{display:block;font-family:'Fraunces',serif;font-size:1.7rem;color:var(--gold-soft);line-height:1.1}
+  .cd span{font-size:.68rem;letter-spacing:.18em;text-transform:uppercase;color:var(--muted)}
+
+  .scroll-hint{margin-top:2.4rem;color:var(--muted);font-size:.8rem;letter-spacing:.22em;text-transform:uppercase}
+  .scroll-hint::after{content:"↓";display:block;margin-top:.3rem;color:var(--gold);font-size:1.1rem}
+
+  /* ---------- sections ---------- */
+  section{max-width:1080px;margin:0 auto;padding:3.5rem 1.25rem 1rem}
+  .sec-head{text-align:center;margin-bottom:2.2rem}
+  .sec-head .eyebrow{font-size:.75rem;font-weight:700;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);margin-bottom:.6rem}
+  .sec-head h2{font-family:'Fraunces',serif;font-weight:600;font-size:clamp(1.8rem,4.5vw,2.6rem);line-height:1.15}
+  .sec-head p{color:var(--muted);max-width:36rem;margin:.7rem auto 0}
+  .rule{width:64px;height:2px;background:var(--gold);margin:1rem auto 0;border-radius:2px}
+
+  /* ---------- itinerary days ---------- */
+  .days{display:grid;gap:1rem}
+  @media(min-width:760px){.days{grid-template-columns:repeat(5,1fr)}}
+  .day{
+    background:var(--ink-2);border:1px solid var(--card-border);border-radius:16px;
+    padding:1.2rem 1.1rem;display:flex;flex-direction:column;gap:.45rem;
+    transition:transform .25s ease, border-color .25s ease;
+  }
+  .day:hover{transform:translateY(-4px);border-color:rgba(212,169,78,.5)}
+  .day .dow{font-size:.72rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--gold)}
+  .day .dnum{font-family:'Fraunces',serif;font-size:1.5rem;color:var(--cream)}
+  .day h3{font-family:'Fraunces',serif;font-size:1.08rem;font-weight:600;line-height:1.3}
+  .day p{font-size:.86rem;color:var(--muted)}
+  .day .pill{align-self:flex-start;font-size:.68rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;
+    padding:.28rem .6rem;border-radius:999px;margin-top:.3rem}
+  .pill.food{background:rgba(212,169,78,.14);color:var(--gold-soft);border:1px solid rgba(212,169,78,.4)}
+  .pill.party{background:rgba(154,111,208,.14);color:#c9a8ec;border:1px solid rgba(154,111,208,.4)}
+  .pill.chill{background:rgba(87,167,115,.13);color:#9fd3ae;border:1px solid rgba(87,167,115,.4)}
+  .pill.tbd{background:rgba(185,168,198,.1);color:var(--muted);border:1px solid rgba(185,168,198,.3)}
+
+  /* ---------- event cards ---------- */
+  .events{display:grid;gap:1.4rem}
+  @media(min-width:860px){.events{grid-template-columns:1fr 1fr}.events .wide{grid-column:1/-1}}
+  .event{
+    background:linear-gradient(160deg,var(--ink-3),var(--ink-2));
+    border:1px solid var(--card-border);border-radius:20px;overflow:hidden;
+  }
+  .event .banner{padding:1.6rem 1.6rem 1.2rem;border-bottom:1px solid var(--card-border);position:relative}
+  .event .when{font-size:.75rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:.5rem}
+  .event h3{font-family:'Fraunces',serif;font-size:1.6rem;font-weight:600;line-height:1.2;margin-bottom:.3rem}
+  .event .where{color:var(--cream-dim);font-size:.92rem}
+  .event .where b{color:var(--cream)}
+  .event .body{padding:1.3rem 1.6rem 1.6rem}
+  .event .body p{color:var(--cream-dim);font-size:.95rem;margin-bottom:.9rem}
+  .event ul{list-style:none;display:grid;gap:.55rem;margin-bottom:1.1rem}
+  .event li{font-size:.9rem;color:var(--cream-dim);padding-left:1.4rem;position:relative}
+  .event li::before{content:"⚜";position:absolute;left:0;color:var(--gold);font-size:.8rem}
+  .event li b{color:var(--cream);font-weight:600}
+  .fun{font-style:italic;color:var(--muted)!important;font-size:.85rem!important;border-top:1px dashed rgba(212,169,78,.3);padding-top:.9rem;margin-bottom:0!important}
+
+  .btn-row{display:flex;gap:.7rem;flex-wrap:wrap;margin-top:1.1rem}
+  .btn{
+    display:inline-block;text-decoration:none;font-weight:700;font-size:.85rem;letter-spacing:.06em;
+    padding:.7rem 1.3rem;border-radius:999px;transition:transform .2s ease, box-shadow .2s ease;
+  }
+  .btn:hover{transform:translateY(-2px)}
+  .btn.gold{background:var(--gold);color:var(--ink)}
+  .btn.gold:hover{box-shadow:0 8px 24px rgba(212,169,78,.35)}
+  .btn.ghost{border:1px solid var(--card-border);color:var(--cream)}
+  .btn.ghost:hover{border-color:var(--gold)}
+
+  /* ---------- hotel ---------- */
+  .hotel-card{
+    display:grid;gap:1.5rem;background:var(--ink-2);border:1px solid var(--card-border);
+    border-radius:20px;padding:2rem;align-items:center;
+  }
+  @media(min-width:760px){.hotel-card{grid-template-columns:1.2fr .8fr}}
+  .hotel-card h3{font-family:'Fraunces',serif;font-size:1.7rem;margin-bottom:.4rem}
+  .hotel-card .addr{color:var(--gold-soft);font-weight:600;margin-bottom:.8rem}
+  .hotel-card p{color:var(--muted);font-size:.95rem;margin-bottom:1rem}
+  .hotel-visual{
+    min-height:220px;border-radius:14px;
+    background:
+      radial-gradient(400px 200px at 30% 20%, rgba(212,169,78,.25), transparent 65%),
+      radial-gradient(300px 200px at 75% 80%, rgba(154,111,208,.22), transparent 65%),
+      linear-gradient(150deg,#2c1f36,#171021);
+    border:1px solid var(--card-border);
+    display:flex;align-items:center;justify-content:center;flex-direction:column;gap:.4rem;text-align:center;padding:1.5rem;
+  }
+  .hotel-visual .big{font-family:'Fraunces',serif;font-size:2.6rem;color:var(--gold-soft)}
+  .hotel-visual small{color:var(--muted);letter-spacing:.2em;text-transform:uppercase;font-size:.7rem}
+
+  /* ---------- krewe ---------- */
+  .krewe-grid{display:grid;gap:.9rem;grid-template-columns:repeat(auto-fill,minmax(150px,1fr))}
+  .krewe-card{
+    background:var(--ink-2);border:1px dashed rgba(212,169,78,.35);border-radius:14px;
+    padding:1.4rem 1rem;text-align:center;color:var(--muted);font-size:.9rem;
+  }
+  .krewe-card .avatar{
+    width:52px;height:52px;border-radius:50%;margin:0 auto .7rem;
+    background:linear-gradient(140deg,var(--purple),var(--gold));
+    display:flex;align-items:center;justify-content:center;
+    font-family:'Fraunces',serif;font-size:1.4rem;color:var(--ink);font-weight:700;
+  }
+  .krewe-note{text-align:center;color:var(--muted);margin-top:1.4rem;font-style:italic}
+
+  /* ---------- good to know ---------- */
+  .tips{display:grid;gap:1rem}
+  @media(min-width:760px){.tips{grid-template-columns:repeat(3,1fr)}}
+  .tip{background:var(--ink-2);border:1px solid var(--card-border);border-radius:16px;padding:1.4rem}
+  .tip .icon{font-size:1.5rem;margin-bottom:.6rem}
+  .tip h4{font-family:'Fraunces',serif;font-size:1.1rem;margin-bottom:.4rem;color:var(--gold-soft)}
+  .tip p{font-size:.88rem;color:var(--muted)}
+
+  /* ---------- rsvp ---------- */
+  .rsvp-box{
+    text-align:center;background:linear-gradient(160deg,rgba(212,169,78,.1),rgba(154,111,208,.08));
+    border:1px solid var(--card-border);border-radius:20px;padding:2.6rem 1.5rem;margin-top:1rem;
+  }
+  .rsvp-box h3{font-family:'Fraunces',serif;font-size:1.8rem;margin-bottom:.6rem}
+  .rsvp-box p{color:var(--muted);max-width:32rem;margin:0 auto 1.4rem}
+
+  footer{border-top:1px solid var(--card-border);margin-top:4rem;padding:2rem 1.25rem 3rem;text-align:center;color:var(--muted);font-size:.85rem}
+  footer .fleur{color:var(--gold);font-size:1.3rem;display:block;margin-bottom:.6rem}
+
+  /* ---------- krewe wall ---------- */
+  .wall-card{background:var(--cream);border:1px solid var(--card-border);border-radius:20px;padding:1.6rem;color:#2a2133}
+  .wall-card .wall-note{font-size:.85rem;color:#6b5f73;margin-bottom:1rem}
+  #cusdis_thread{margin-top:.5rem}
+
+  .reveal{opacity:0;transform:translateY(18px);transition:opacity .6s ease,transform .6s ease}
+  .reveal.in{opacity:1;transform:none}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="inner">
+    <a class="brand" href="#top">⚜ <span>Mardi Gras 2027</span></a>
+    <div class="links">
+      <a href="#itinerary">Itinerary</a>
+      <a href="#events">Events</a>
+      <a href="#hotel">Hotel</a>
+      <a href="#krewe">Krewe</a>
+      <a href="#wall">Wall</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <span class="kicker">New Orleans · Louisiana</span>
+  <h1>Mardi Gras <em>2027</em></h1>
+  <div class="place">The Krewe Weekend</div>
+  <div class="dates">February 4 <span class="dot">·</span> 8 <span class="dot">·</span> Thursday to Monday</div>
+  <p class="tagline">Five days, one krewe, and the best excuse on the calendar. Everything you need — where to be, when to be there, and what to wear — lives on this page.</p>
+  <div class="countdown" id="countdown" aria-label="Countdown to the trip">
+    <div class="cd"><b id="cd-d">–</b><span>Days</span></div>
+    <div class="cd"><b id="cd-h">–</b><span>Hours</span></div>
+    <div class="cd"><b id="cd-m">–</b><span>Minutes</span></div>
+    <div class="cd"><b id="cd-s">–</b><span>Seconds</span></div>
+  </div>
+  <div class="scroll-hint">The plan</div>
+</header>
+
+<!-- ============ ITINERARY ============ -->
+<section id="itinerary">
+  <div class="sec-head reveal">
+    <div class="eyebrow">The Weekend</div>
+    <h2>Itinerary at a Glance</h2>
+    <div class="rule"></div>
+    <p>Tap an event below for the full details. Times are Central.</p>
+  </div>
+  <div class="days">
+    <div class="day reveal">
+      <span class="dow">Thursday</span><span class="dnum">Feb 4</span>
+      <h3>Arrive &amp; Settle In</h3>
+      <p>Check into the Sheraton, find your bearings, ease into the city.</p>
+      <span class="pill chill">Easy day</span>
+    </div>
+    <div class="day reveal">
+      <span class="dow">Friday</span><span class="dnum">Feb 5</span>
+      <h3>Shucking Birthday Boil</h3>
+      <p>Crawfish boil birthday party, 5:30–8:30 PM at the Four Seasons.</p>
+      <span class="pill food">Main event</span>
+    </div>
+    <div class="day reveal">
+      <span class="dow">Saturday</span><span class="dnum">Feb 6</span>
+      <h3>Sausage Fest + Iris</h3>
+      <p>Bekah's legendary sausage fest 11:30 AM–1:30 PM, then the parade.</p>
+      <span class="pill party">Main event</span>
+    </div>
+    <div class="day reveal">
+      <span class="dow">Sunday</span><span class="dnum">Feb 7</span>
+      <h3>Free Day</h3>
+      <p>Parades, brunch, Magazine Street wandering. Full plan coming soon.</p>
+      <span class="pill tbd">TBA</span>
+    </div>
+    <div class="day reveal">
+      <span class="dow">Monday</span><span class="dnum">Feb 8</span>
+      <h3>Farewells</h3>
+      <p>Checkout, one last coffee, and departures.</p>
+      <span class="pill chill">Travel day</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============ EVENTS ============ -->
+<section id="events">
+  <div class="sec-head reveal">
+    <div class="eyebrow">Don't Miss</div>
+    <h2>The Events</h2>
+    <div class="rule"></div>
+    <p>Three anchor events. Dress codes are real — plan accordingly.</p>
+  </div>
+
+  <div class="events">
+    <div class="event reveal">
+      <div class="banner">
+        <div class="when">Friday · Feb 5 · 5:30 – 8:30 PM</div>
+        <h3>It's a Shucking Birthday Boil</h3>
+        <div class="where"><b>Four Seasons New Orleans</b> — outdoor space by Chemin à la Mer, Ground Floor</div>
+      </div>
+      <div class="body">
+        <p>A birthday crawfish boil under the New Orleans sky. Come hungry, leave happy.</p>
+        <ul>
+          <li><b>Crawfish boil</b> with all the fixings</li>
+          <li><b>Outdoor setting</b> by the river at Chemin à la Mer</li>
+          <li><b>Birthday celebration</b> — details on the guest of honor coming soon</li>
+        </ul>
+        <div class="btn-row">
+          <a class="btn gold" href="#rsvp">RSVP</a>
+          <a class="btn ghost" href="https://www.fourseasons.com/neworleans/" target="_blank" rel="noopener">Venue</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="event reveal">
+      <div class="banner">
+        <div class="when">Saturday · Feb 6 · 11:30 AM – 1:30 PM</div>
+        <h3>Bekah's Second An(nu)al Sausage Fest</h3>
+        <div class="where"><b>Dat Dog — Magazine Street</b>, Opa Terrace (covered outside space)</div>
+      </div>
+      <div class="body">
+        <p>Come one, come all (okay, maybe not all) to the second annual sausage fest.</p>
+        <ul>
+          <li><b>Dress code:</b> Tracksuit Mafia (any tracksuit you'd like) or sausage-positive attire</li>
+          <li><b>Open bar</b> + a buffet of culinary delights — assorted sausages, potatoes in various fried forms, allll of the toppings <b>(including crawfish étoufée!)</b></li>
+          <li><b>Easy stroll</b> after to watch the Krewe of Iris parade</li>
+          <li><b>Dogs welcome,</b> as are well-behaved children</li>
+        </ul>
+        <p class="fun">Unattended children will be given margaritas.</p>
+        <div class="btn-row">
+          <a class="btn gold" href="#rsvp">RSVP</a>
+          <a class="btn ghost" href="https://datdog.com" target="_blank" rel="noopener">Dat Dog</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="event wide reveal">
+      <div class="banner">
+        <div class="when">Date to be announced</div>
+        <h3>Classy as Shuck</h3>
+        <div class="where"><b>Four Seasons New Orleans</b> — dinner event</div>
+      </div>
+      <div class="body">
+        <p>Dress to impress in New Orleans / Eccentric / Eclectic Cocktail and join the krewe for a Classy as Shuck dinner. <b>Please RSVP ASAP</b> — this is not an inexpensive party, so if you want the free food and drinks, be kind and reply.</p>
+        <ul>
+          <li><b>Dress code:</b> New Orleans / Eccentric / Eclectic Cocktail <i>(see Bekah for attire questions)</i></li>
+          <li><b>Offspring permitted</b> — just give a heads-up</li>
+          <li><b>Dietary restrictions</b> accommodated with notice given <b>prior</b> to the start of Carnival season</li>
+        </ul>
+        <p class="fun">Note: she didn't write cheesy, kitschy, cringy, or costume…</p>
+        <div class="btn-row">
+          <a class="btn gold" href="#rsvp">RSVP</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ KREWE WALL ============ -->
+<section id="wall">
+  <div class="sec-head reveal">
+    <div class="eyebrow">Discussion</div>
+    <h2>Krewe Wall</h2>
+    <div class="rule"></div>
+    <p>Questions, hype, ride-shares, costume ideas — drop it here, just like a Facebook event wall.</p>
+  </div>
+  <div class="wall-card reveal">
+    <p class="wall-note">No account needed — just leave your name with your comment.</p>
+    <div id="cusdis_thread"
+      data-host="https://cusdis.com"
+      data-app-id="YOUR_CUSDIS_APP_ID"
+      data-page-id="mardi-gras-2027"
+      data-page-url="https://cedesc220.github.io/mardi-gras-2027/"
+      data-page-title="Mardi Gras 2027 — Krewe Wall"></div>
+  </div>
+</section>
+
+<!-- ============ HOTEL ============ -->
+<section id="hotel">
+  <div class="sec-head reveal">
+    <div class="eyebrow">Home Base</div>
+    <h2>Where We're Staying</h2>
+    <div class="rule"></div>
+  </div>
+  <div class="hotel-card reveal">
+    <div>
+      <h3>Sheraton New Orleans Hotel</h3>
+      <div class="addr">500 Canal St, New Orleans, LA 70130</div>
+      <p>Our home base for the whole weekend — right on Canal Street, steps from the French Quarter, with a rooftop pool and views over the city. Book through our group room block for the special rate.</p>
+      <div class="btn-row">
+        <a class="btn gold" href="https://whfp4tcab.cc.rs6.net/tn.jsp?f=0016GXxKcxAMGjxDMln7DmEpT7ffMX9Y7JOeoVh6v3CWBUYKR9o4nGHUmGFmvwe7hcQZ17qpyS1Dc3jZaXiMSVkGRM_LfjCN3qF15n5J-NHgnzt77rMnYaVHYMtwAHfJVIw2bV4vQSbTb6JS-D4pgINZc06WUC4U76C3p9PqkxXYTQuB0bp9Y7vjxQ4v2YY6NEuUrW_lsxBpjKnpqKI_SJ6qBAG8TOE44KrwzFT0DYkHCJT-1vQY77YxDZJ35r-u8tWObdSvd10AAbfmg8UqwEaxuHpH973AiqB5vdYy1InzNZHgmxX6zUBZZfmRhSNOn48&c=9hrXE9rTke8GQOKNepIYGq0lJyekptD-e69yaxORBo5VF4Uvp8M7eQ==&ch=kjA4VgW1WdFq5js3BQQY_QH96gAg-dRu-A4vN56tqwvgYys_n4KUiw==" target="_blank" rel="noopener">Book the Room Block</a>
+        <a class="btn ghost" href="https://www.marriott.com/en-us/hotels/msyis-sheraton-new-orleans-hotel/overview/" target="_blank" rel="noopener">Hotel Site</a>
+        <a class="btn ghost" href="https://maps.google.com/?q=Sheraton+New+Orleans+Hotel+500+Canal+St" target="_blank" rel="noopener">Map</a>
+      </div>
+    </div>
+    <div class="hotel-visual">
+      <div class="big">⚜</div>
+      <small>Canal Street · French Quarter adjacent</small>
+    </div>
+  </div>
+</section>
+
+<!-- ============ KREWE ============ -->
+<section id="krewe">
+  <div class="sec-head reveal">
+    <div class="eyebrow">The Crew</div>
+    <h2>The Krewe</h2>
+    <div class="rule"></div>
+    <p>Who's in for the weekend.</p>
+  </div>
+  <div class="krewe-grid" id="krewe-grid">
+    <div class="krewe-card"><div class="avatar">?</div>Attendee list<br>coming soon</div>
+  </div>
+  <p class="krewe-note">Names are being gathered — check back soon.</p>
+</section>
+
+<!-- ============ GOOD TO KNOW ============ -->
+<section id="info">
+  <div class="sec-head reveal">
+    <div class="eyebrow">Good to Know</div>
+    <h2>Before You Pack</h2>
+    <div class="rule"></div>
+  </div>
+  <div class="tips">
+    <div class="tip reveal">
+      <div class="icon">👔</div>
+      <h4>Dress Codes Are Real</h4>
+      <p>Tracksuit Mafia for Saturday's sausage fest. Eccentric cocktail for the Classy as Shuck dinner. When in doubt, ask Bekah.</p>
+    </div>
+    <div class="tip reveal">
+      <div class="icon">✉️</div>
+      <h4>RSVP Early</h4>
+      <p>Especially for the Classy as Shuck dinner — headcounts matter and this one isn't cheap to host. Reply sooner than later.</p>
+    </div>
+    <div class="tip reveal">
+      <div class="icon">🎭</div>
+      <h4>Parade Season</h4>
+      <p>It's Carnival season — expect street closures, crowds, and magic. The Krewe of Iris rolls Saturday, an easy stroll from Dat Dog.</p>
+    </div>
+  </div>
+
+  <div class="rsvp-box reveal" id="rsvp">
+    <h3>RSVP</h3>
+    <p>Online RSVPs are opening soon — you'll be able to mark attend / can't make it for each event right here. For now, reply to Bekah directly.</p>
+    <a class="btn gold" href="#top">Back to Top</a>
+  </div>
+</section>
+
+<footer>
+  <span class="fleur">⚜</span>
+  Built for the krewe · See you in New Orleans<br>
+  <span style="font-size:.75rem">Mardi Gras 2027 · February 4–8</span>
+</footer>
+
+<script>
+  // Countdown to Feb 4, 2027 (Central)
+  const target = new Date('2027-02-04T00:00:00-06:00').getTime();
+  const d=document.getElementById('cd-d'),h=document.getElementById('cd-h'),
+        m=document.getElementById('cd-m'),s=document.getElementById('cd-s');
+  function tick(){
+    const diff = target - Date.now();
+    if(diff<=0){d.textContent=h.textContent=m.textContent=s.textContent='0';return;}
+    d.textContent=Math.floor(diff/864e5);
+    h.textContent=Math.floor(diff/36e5)%24;
+    m.textContent=Math.floor(diff/6e4)%60;
+    s.textContent=Math.floor(diff/1e3)%60;
+  }
+  tick();setInterval(tick,1000);
+
+  // Reveal on scroll
+  const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}}),{threshold:.12});
+  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+</script>
+<script>
+  // Krewe Wall: load Cusdis only once a real App ID is configured;
+  // until then show a friendly "opening soon" note instead of an error.
+  (function(){
+    var t=document.getElementById('cusdis_thread');
+    if(!t) return;
+    var id=t.getAttribute('data-app-id')||'';
+    if(id.indexOf('YOUR_')===0){
+      t.innerHTML='<p style="color:#6b5f73;font-size:.9rem">The Krewe Wall opens soon — check back!</p>';
+      return;
+    }
+    var s=document.createElement('script');
+    s.async=true; s.defer=true; s.src='https://cusdis.com/js/cusdis.es.js';
+    document.body.appendChild(s);
+  })();
+</script>
+</body>
+</html>
