@@ -100,17 +100,22 @@
   .feature-solo .cols{display:grid;gap:2rem;margin-top:1.6rem}
   @media(min-width:760px){.feature-solo .cols{grid-template-columns:1fr 1fr}}
 
-  /* ---------- schedule ---------- */
-  .schedule{border-top:2px solid var(--ink)}
-  .srow{display:grid;grid-template-columns:86px 1fr;gap:1.2rem;padding:1.05rem 0;border-bottom:1px solid var(--hairline);align-items:baseline}
-  @media(min-width:640px){.srow{grid-template-columns:150px 170px 1fr}}
-  .srow .d{font-size:.78rem;letter-spacing:.2em;text-transform:uppercase;font-weight:600;color:var(--ink)}
-  .srow .t{font-family:'Fraunces',serif;font-size:1.15rem}
-  .srow .w{color:var(--ink-soft)}
-  .srow .w b{color:var(--ink)}
-  .srow .w a{color:var(--ink);text-decoration:underline;text-decoration-color:var(--gold);text-decoration-thickness:2px;text-underline-offset:3px}
-  .srow .w a:hover{color:var(--purple)}
-  .sched-note{color:var(--muted);font-style:italic;margin-bottom:1.2rem;font-size:.95rem}
+  /* ---------- program ---------- */
+  .sched-note{color:var(--muted);font-style:italic;margin-bottom:.6rem;font-size:.95rem}
+  .days{border-top:2px solid var(--ink)}
+  .day{display:grid;gap:.7rem;padding:1.7rem 0;border-bottom:1px solid var(--hairline)}
+  @media(min-width:700px){.day{grid-template-columns:210px 1fr;gap:2.5rem}}
+  .day-name{font-family:'Fraunces',serif;font-weight:500;font-size:1.65rem;line-height:1.1}
+  .day-date{display:block;font-size:.75rem;letter-spacing:.22em;text-transform:uppercase;color:var(--muted);font-weight:500;margin-top:.35rem}
+  .ev{display:flex;gap:1.1rem;margin-bottom:.8rem}
+  .ev:last-child{margin-bottom:0}
+  .ev-time{flex:0 0 6.4rem;font-size:.74rem;letter-spacing:.14em;text-transform:uppercase;font-weight:600;color:#8a6d2f;padding-top:.3rem}
+  .ev-what{color:var(--ink-soft)}
+  .ev-what b{color:var(--ink)}
+  .ev-what a{color:var(--ink);text-decoration:underline;text-decoration-color:var(--gold);text-decoration-thickness:2px;text-underline-offset:3px;font-weight:600}
+  .ev-what a:hover{color:var(--purple)}
+  .ev.suggestion .ev-what{border:1.5px dashed var(--gold);border-radius:3px;padding:.85rem 1.05rem;font-style:italic;flex:1}
+  .sug-tag{display:block;font-style:normal;font-size:.7rem;letter-spacing:.22em;text-transform:uppercase;color:var(--muted);font-weight:600;margin-bottom:.25rem}
 
   /* ---------- hotel ---------- */
   .hotel{display:grid;gap:2rem;align-items:start}
@@ -187,7 +192,7 @@
     <h1>Mardi Gras <span class="yr">2027</span></h1>
     <hr class="double-rule">
     <div class="dates">February 4 – 8 · Thursday to Monday</div>
-    <p class="lede">Four days in New Orleans with the krewe. A <b>birthday crawfish boil</b> on Friday, the <b>second annual sausage fest</b> on Saturday, and a dinner that calls for your most <b>eccentric cocktail attire</b> — plus plenty of hours in between for whatever the group dreams up. Times, places, and dress codes are all below.</p>
+    <p class="lede">Four days in New Orleans with the krewe. A <b>birthday crawfish boil</b> on Friday, the <b>second annual sausage fest</b> on Saturday — plus plenty of hours in between for whatever the group dreams up. Times, places, and dress codes are all below.</p>
   </div>
 </header>
 
@@ -198,38 +203,46 @@
     <div class="sec-label reveal">The Weekend</div>
     <h2 class="sec-title reveal">Day by day</h2>
     <p class="sched-note reveal">Tap a party name to jump to the full details below.</p>
-    <div class="schedule reveal">
-      <div class="srow">
-        <div class="d">Thursday</div><div class="t">Feb 4</div>
-        <div class="w"><b>Arrive &amp; settle in.</b> Check into the Sheraton, find your bearings, ease into the city.</div>
+    <div class="days reveal">
+      <div class="day">
+        <div><span class="day-name">Thursday</span><span class="day-date">February 4</span></div>
+        <div>
+          <div class="ev"><span class="ev-time">Afternoon</span><span class="ev-what"><b>Arrive &amp; settle in.</b> Check into the Marriott, find your bearings, ease into the city.</span></div>
+          <div class="ev suggestion"><span class="ev-time">Evening</span><span class="ev-what"><span class="sug-tag">Suggestion</span>Watching Muses — I can maybe get us a reservation for our group in the Bayou Lounge: live music and an easy walk to see the parade. Or we make reservations closer to the city. Or we just play it by ear — but it's always good to have a plan.</span></div>
+        </div>
       </div>
-      <div class="srow">
-        <div class="d">Friday</div><div class="t">Feb 5</div>
-        <div class="w"><b><a href="#event-boil">Shucking Birthday Boil</a>,</b> 5:30–8:30 PM at the Four Seasons.</div>
+      <div class="day">
+        <div><span class="day-name">Friday</span><span class="day-date">February 5</span></div>
+        <div>
+          <div class="ev"><span class="ev-time">5:30 – 8:30 PM</span><span class="ev-what"><b><a href="#event-boil">Shucking Birthday Boil</a></b> at the Four Seasons — crawfish boil birthday party.</span></div>
+        </div>
       </div>
-      <div class="srow">
-        <div class="d">Saturday</div><div class="t">Feb 6</div>
-        <div class="w"><b><a href="#event-sausage">Sausage Fest</a>,</b> 11:30 AM–1:30 PM at Dat Dog, then the Iris parade.</div>
+      <div class="day">
+        <div><span class="day-name">Saturday</span><span class="day-date">February 6</span></div>
+        <div>
+          <div class="ev"><span class="ev-time">11:30 AM – 1:30 PM</span><span class="ev-what"><b><a href="#event-sausage">Sausage Fest</a></b> at Dat Dog Magazine Street.</span></div>
+          <div class="ev"><span class="ev-time">Afternoon</span><span class="ev-what">Parades — Iris rolls through the neighborhood.</span></div>
+          <div class="ev"><span class="ev-time">6:00 PM</span><span class="ev-what"><b><a href="#event-extravaganza">Endymion Extravaganza</a></b> at the Caesars Superdome.</span></div>
+        </div>
       </div>
-      <div class="srow">
-        <div class="d">One night</div><div class="t">TBA</div>
-        <div class="w"><b><a href="#event-dinner">Classy as Shuck</a>.</b> The big dinner at the Four Seasons — date and time still to come.</div>
+      <div class="day">
+        <div><span class="day-name">Sunday</span><span class="day-date">February 7</span></div>
+        <div>
+          <div class="ev"><span class="ev-time">All day</span><span class="ev-what"><b>Free day.</b> Parades, brunch, Magazine Street wandering — full plan coming.</span></div>
+        </div>
       </div>
-      <div class="srow">
-        <div class="d">Sunday</div><div class="t">Feb 7</div>
-        <div class="w"><b>Free day.</b> Parades, brunch, Magazine Street wandering — full plan coming.</div>
-      </div>
-      <div class="srow">
-        <div class="d">Monday</div><div class="t">Feb 8</div>
-        <div class="w"><b>Farewells.</b> Checkout, one last coffee, departures.</div>
+      <div class="day">
+        <div><span class="day-name">Monday</span><span class="day-date">February 8</span></div>
+        <div>
+          <div class="ev"><span class="ev-time">Morning</span><span class="ev-what"><b>Farewells.</b> Checkout, one last coffee, departures.</span></div>
+        </div>
       </div>
     </div>
   </section>
 
   <!-- ============ PARTIES ============ -->
   <section id="parties">
-    <div class="sec-label reveal">The Parties</div>
-    <h2 class="sec-title reveal">Three reasons to pack a bag</h2>
+    <h2 class="sec-title reveal">Events</h2>
 
     <article class="feature reveal" id="event-boil">
       <div class="feature-text">
@@ -272,26 +285,15 @@
       </figure>
     </article>
 
-    <article class="feature-solo reveal" id="event-dinner">
-      <div class="kicker green">Date to be announced</div>
-      <h3 style="font-family:'Fraunces',serif;font-weight:500;font-size:clamp(1.7rem,3.6vw,2.4rem);line-height:1.15;letter-spacing:-.01em">Classy as Shuck</h3>
-      <div class="venue">Four Seasons New Orleans — dinner</div>
-      <p class="pull">"Dress to impress in New Orleans / Eccentric / Eclectic Cocktail and join us at the Four Seasons for a Classy as Shuck dinner event."</p>
-      <div class="cols">
-        <div>
-          <ul class="details">
-            <li><b>RSVP ASAP</b> — this is not an inexpensive party. If you want the free food and drinks, be kind and reply.</li>
-            <li><b>Offspring permitted</b> — just give a heads-up first.</li>
-          </ul>
-        </div>
-        <div>
-          <ul class="details">
-            <li><b>Dietary restrictions</b> accommodated with notice given <b>prior</b> to the start of Carnival season.</li>
-            <li><b>Attire questions:</b> see Bekah.</li>
-          </ul>
-        </div>
-      </div>
-      <p class="aside">Note: she didn't write cheesy, kitschy, cringy, or costume…</p>
+    <article class="feature-solo reveal" id="event-extravaganza">
+      <div class="kicker gold">Saturday, February 6 · evening — 6 PM for now</div>
+      <h3 style="font-family:'Fraunces',serif;font-weight:500;font-size:clamp(1.7rem,3.6vw,2.4rem);line-height:1.15;letter-spacing:-.01em">Endymion Extravaganza</h3>
+      <div class="venue">Caesars Superdome</div>
+      <p>Saturday is Endymion day — our krewe. The parade rolls at 4 PM through Mid-City and finishes inside the Caesars Superdome, where the ticketed Extravaganza party takes over for the night.</p>
+      <ul class="details">
+        <li><b>Time:</b> 6 PM for now — to be confirmed once details firm up</li>
+        <li><b>Tickets:</b> the Extravaganza is a ticketed event</li>
+      </ul>
     </article>
   </section>
 
@@ -301,20 +303,21 @@
     <h2 class="sec-title reveal">Where we're staying</h2>
     <div class="hotel reveal">
       <div>
-        <h3>Sheraton New Orleans Hotel</h3>
-        <div class="addr">500 Canal St, New Orleans, LA 70130</div>
-        <p>Our home base for the whole weekend — right on Canal Street, steps from the French Quarter, with a rooftop pool and views over the city. Book through our group room block for the special rate.</p>
+        <h3>New Orleans Marriott</h3>
+        <div class="addr">555 Canal St, New Orleans, LA 70130</div>
+        <p>Our home base for the whole weekend — right on Canal Street at the edge of the French Quarter. Group rate is <b>$389/night</b> through our room block.</p>
         <div class="btn-row">
           <a class="btn" href="https://whfp4tcab.cc.rs6.net/tn.jsp?f=0016GXxKcxAMGjxDMln7DmEpT7ffMX9Y7JOeoVh6v3CWBUYKR9o4nGHUmGFmvwe7hcQZ17qpyS1Dc3jZaXiMSVkGRM_LfjCN3qF15n5J-NHgnzt77rMnYaVHYMtwAHfJVIw2bV4vQSbTb6JS-D4pgINZc06WUC4U76C3p9PqkxXYTQuB0bp9Y7vjxQ4v2YY6NEuUrW_lsxBpjKnpqKI_SJ6qBAG8TOE44KrwzFT0DYkHCJT-1vQY77YxDZJ35r-u8tWObdSvd10AAbfmg8UqwEaxuHpH973AiqB5vdYy1InzNZHgmxX6zUBZZfmRhSNOn48&c=9hrXE9rTke8GQOKNepIYGq0lJyekptD-e69yaxORBo5VF4Uvp8M7eQ==&ch=kjA4VgW1WdFq5js3BQQY_QH96gAg-dRu-A4vN56tqwvgYys_n4KUiw==" target="_blank" rel="noopener">Book the room block</a>
-          <a class="btn outline" href="https://maps.google.com/?q=Sheraton+New+Orleans+Hotel+500+Canal+St" target="_blank" rel="noopener">Map</a>
+          <a class="btn outline" href="https://maps.google.com/?q=New+Orleans+Marriott+555+Canal+St" target="_blank" rel="noopener">Map</a>
         </div>
       </div>
       <div class="hotel-facts">
         <h4>Good to know</h4>
         <ul>
           <li>Group block: "Kelly Krewe of Endymion" — use the booking link for the rate</li>
-          <li>On Canal Street, across from the French Quarter</li>
-          <li>Rooftop pool, fitness center, Roux Bistro on site</li>
+          <li><b>$389/night</b> — book by <b>January 7</b></li>
+          <li>On Canal Street at the edge of the French Quarter</li>
+          <li>Pool, spa, fitness center</li>
         </ul>
       </div>
     </div>
@@ -324,7 +327,7 @@
   <section id="eat">
     <div class="sec-label reveal">Fuel</div>
     <h2 class="sec-title reveal">Where to eat nearby</h2>
-    <p class="measure reveal" style="color:var(--ink-soft);margin-bottom:2rem">Top-rated kitchens within a short walk of the Sheraton — stars included, so you can pick your own adventure.</p>
+    <p class="measure reveal" style="color:var(--ink-soft);margin-bottom:2rem">Top-rated kitchens within a short walk of the Marriott — stars included, so you can pick your own adventure.</p>
     <div class="eat-list reveal">
       <div class="eat-item">
         <div>
