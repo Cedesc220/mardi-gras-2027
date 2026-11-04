@@ -164,6 +164,13 @@
   .stars .fg{position:absolute;left:0;top:0;color:var(--gold);overflow:hidden;white-space:nowrap}
   .stars-num{font-weight:600;margin-left:.55rem}
   .stars-count{display:block;color:var(--muted);font-size:.82rem;font-style:italic;margin-top:.15rem}
+  .mag{margin-top:2.8rem;border-top:2px solid var(--ink);padding-top:1.6rem}
+  .mag h3{font-family:'Fraunces',serif;font-weight:500;font-size:1.55rem}
+  .mag-sub{font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);font-weight:500;margin:.35rem 0 1.3rem}
+  .mag-cols{display:grid;gap:1.6rem}
+  @media(min-width:760px){.mag-cols{grid-template-columns:repeat(3,1fr)}}
+  .mag-cols h4{font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;color:var(--ink);margin-bottom:.45rem}
+  .mag-cols p{color:var(--ink-soft);font-size:.95rem}
 
   .reveal{opacity:0;transform:translateY(14px);transition:opacity .55s ease,transform .55s ease}
   .reveal.in{opacity:1;transform:none}
@@ -228,7 +235,7 @@
       <div class="day">
         <div><span class="day-name">Sunday</span><span class="day-date">February 7</span></div>
         <div>
-          <div class="ev"><span class="ev-time">All day</span><span class="ev-what"><b>Free day.</b> Parades, brunch, Magazine Street wandering — full plan coming.</span></div>
+          <div class="ev"><span class="ev-time">All day</span><span class="ev-what"><b>Free day.</b> Parades, brunch, Magazine Street wandering — <a href="#magazine">dining &amp; drinking picks</a>.</span></div>
         </div>
       </div>
       <div class="day">
@@ -364,7 +371,26 @@
         </div>
       </div>
     </div>
+    <div class="mag reveal" id="magazine">
+      <h3>Sunday on Magazine Street</h3>
+      <div class="mag-sub">Dining &amp; drinking</div>
+      <div class="mag-cols">
+        <div>
+          <h4>Caf&eacute;s &amp; brunch</h4>
+          <p>La Boulangerie, The Vintage, Surrey's Caf&eacute; &amp; Juice Bar, Molly's Rise and Shine</p>
+        </div>
+        <div>
+          <h4>Restaurants &amp; eateries</h4>
+          <p>La Petite Grocery, Saba, Juan's Flying Burrito, The Rum House, Casamento's Oysters</p>
+        </div>
+        <div>
+          <h4>Fine dining &amp; new openings</h4>
+          <p>Chef Josh Adamo's intimate 12-seat tasting menu concept</p>
+        </div>
+      </div>
+    </div>
   </section>
+
 
   <!-- ============ KREWE ============ -->
   <section id="krewe">
